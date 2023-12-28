@@ -44,7 +44,7 @@ function handleClick(el) {
 function Reset()
 {
     currrentPlayer = "X";
-    let gameWon=false;
+    gameWon=false;
     arr = Array(9).fill(null);
     document.querySelectorAll('.cell').forEach(cell => cell.innerText = "");
     document.getElementById("winning-msg").innerHTML = "";
