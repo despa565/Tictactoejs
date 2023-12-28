@@ -2,6 +2,7 @@ let currrentPlayer = "X";
 // Put data according click on array
 let arr = Array(9).fill(null);
 
+let gameWon=false;
 
 
 function checkWin() {
@@ -16,6 +17,8 @@ function checkWin() {
         (arr[2] !== null && arr[2] == arr[4] && arr[4] == arr[6])
     ) {
         document.getElementById("winning-msg").innerHTML=`Winner: ${currrentPlayer}`;
+        gameWon=true;
+
     }
     if(!arr.some((e) => e === null))
     
@@ -28,6 +31,7 @@ function checkWin() {
 
 
 function handleClick(el) {
+    if(gameWon) return;
     const id = (el.id);
     if(arr[id] !== null) return;
     arr[id] = currrentPlayer;
